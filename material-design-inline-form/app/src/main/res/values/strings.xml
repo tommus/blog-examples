@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+  <eat-comment/>
+
+  <!-- region Application -->
+
+  <string name="app_name">Material Animation</string>
+
+  <!-- endregion -->
+
+  <!-- region Main -->
+
+  <string name="main_card_title">Example Title</string>
+  <string name="main_card_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</string>
+  <string name="main_card_action">Save</string>
+
+  <!-- endregion -->
+
+</resources>

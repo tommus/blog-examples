@@ -1,0 +1,87 @@
+//region Startup Plugins
+
+apply plugin: "com.android.application"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-android-extensions"
+
+//endregion
+
+//region Android
+
+android {
+
+  //region Build Configuration
+
+  buildTypes {
+    debug {
+      useProguard false
+      minifyEnabled false
+    }
+    release {
+      useProguard true
+      minifyEnabled true
+      proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"),
+          "proguard-rules.pro"
+    }
+  }
+
+  //endregion
+
+  //region Compile Options
+
+  compileSdkVersion deps.build_versions.compile_sdk
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  //endregion
+
+  //region Default Config
+
+  defaultConfig {
+    applicationId "co.windly.queueingtest"
+    minSdkVersion deps.build_versions.min_sdk
+    targetSdkVersion deps.build_versions.target_sdk
+    versionCode 1
+    versionName "1.0"
+  }
+
+  //endregion
+}
+
+//endregion
+
+//region Dependencies
+
+dependencies {
+
+  //region Application Files
+
+  implementation fileTree(dir: "libs", include: ["*.jar"])
+
+  //endregion
+
+  //region Androidx
+
+  implementation deps.androidx.app_compat
+  implementation deps.androidx.constraint
+  implementation deps.androidx.material
+
+  //endregion
+
+  //region Architecture
+
+  implementation deps.misc.limbo
+
+  //endregion
+
+  //region Kotlin
+
+  api deps.kotlin.stdlib_jdk8
+
+  //endregion
+}
+
+//endregion

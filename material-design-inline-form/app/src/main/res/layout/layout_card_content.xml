@@ -1,0 +1,85 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/cardContentView"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:padding="@dimen/size_p16">
+
+  <!-- region Title -->
+
+  <TextView
+    android:id="@+id/titleView"
+    android:layout_width="@dimen/size_auto"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/size_p8"
+    android:text="@string/main_card_title"
+    android:textColor="@color/colorCardTitle"
+    android:textSize="@dimen/font_24"
+    app:layout_constraintBottom_toTopOf="@+id/contentView"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_chainStyle="packed"/>
+
+  <!-- endregion -->
+
+  <!-- region Content -->
+
+  <TextView
+    android:id="@+id/contentView"
+    android:layout_width="@dimen/size_auto"
+    android:layout_height="wrap_content"
+    android:text="@string/main_card_content"
+    android:textColor="@color/colorCardText"
+    android:textSize="@dimen/font_14"
+    android:visibility="visible"
+    app:layout_constraintBottom_toTopOf="@+id/contentEditView"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/titleView"
+    tools:visibility="visible"/>
+
+  <!-- endregion -->
+
+  <!-- region Edit -->
+
+  <EditText
+    android:id="@+id/contentEditView"
+    android:layout_width="@dimen/size_auto"
+    android:layout_height="wrap_content"
+    android:text="@string/main_card_content"
+    android:textColor="@color/colorCardText"
+    android:textSize="@dimen/font_14"
+    android:visibility="gone"
+    app:layout_constraintBottom_toTopOf="@+id/saveButtonView"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/contentView"
+    tools:ignore="Autofill,LabelFor,TextFields"
+    tools:visibility="visible"
+    style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"/>
+
+  <!-- endregion -->
+
+  <!-- region Save Button -->
+
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/saveButtonView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/main_card_action"
+    android:textColor="@color/colorCardAction"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/contentEditView"
+    tools:visibility="visible"
+    style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+  <!-- endregion -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
